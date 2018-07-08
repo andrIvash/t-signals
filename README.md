@@ -6,8 +6,8 @@
 
 [Demo][demo] | [Source][source]
 
-[demo]: https://andrivash.github.io/fellow/
-[source]: https://github.com/andrIvash/fellow/
+[demo]: https://andrivash.github.io/t-signals/
+[source]: https://github.com/andrIvash/t-signals/
 
 #### Steps to work with
 
