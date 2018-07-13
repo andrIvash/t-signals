@@ -2,6 +2,10 @@ import React from 'react';
 import './index.scss';
 
 
+type Props = {
+  items: Array<any>
+}
+
 const clickHandler = (evt:any) => {
   console.log("test", evt.target);
 };
@@ -14,7 +18,7 @@ const Elem = (props: any) => {
   )
 };
 
-const List = (props) => {
+const List = (props: Props) => {
   
 
   const items = props.items.map(item => {

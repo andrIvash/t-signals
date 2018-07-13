@@ -13,22 +13,22 @@ export const ITEMS_HAS_ERRORED = 'ITEMS_HAS_ERRORED';
  * action creators
  */
 
-export const itemsIsLoading = bool => ({
+export const itemsIsLoading = (bool: boolean): object => ({
   type: ITEMS_IS_LOADING,
   isLoading: bool,
 });
 
-export const receiveItems = items => ({
+export const receiveItems = (items: Array<any>): object => ({
   type: RECEIVE_ITEMS,
   items,
 });
 
-export const itemsHasErrored = bool => ({
+export const itemsHasErrored = (bool: boolean): object => ({
   type: ITEMS_HAS_ERRORED,
   hasErrored: bool,
 });
 
-export const getItems = (url, query) => dispatch => {
+export const getItems = (url: string, query: object) => dispatch => {
   dispatch(itemsIsLoading(true));
   return helpers.fetchAllData(url, query)
     .then(response => {

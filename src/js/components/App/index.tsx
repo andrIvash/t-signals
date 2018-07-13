@@ -1,19 +1,31 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators, Dispatch } from 'redux';
 import { getItems } from '../../actions';
+import helpers from '../../helpers';
 import List from '../List';
 import ErrorBoundary from './ErrorBoundary';
 import './index.scss';
 
 interface HelloProps { compiler: string; framework: string; }
 
-export class App extends Component<HelloProps, {}> {
+type Props = {
+  isLoading: boolean,
+  compiler: string,
+  framework: string,
+  hasErrored: boolean,
+  items: Array<any>,
+  fetchData: (url: string, query?: string) => void
+
+};
+
+export class App extends Component<Props> {
 
   componentDidMount() {
     this.props.fetchData(`${helpers.routes.base}/movies`);
   }
 
-  if (isLoading) {
+  if (isLoading: boolean) {
       return (
         <div className="wrapper">
           <div className="appInner">
@@ -40,9 +52,9 @@ export class App extends Component<HelloProps, {}> {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch: Dispatch) => {
   return {
-    fetchData: (url, query) => dispatch(getItems(url, query)),
+    fetchData: (url: string, query?: string) => dispatch(getItems(url, query)),
     //onFilmSelect: id => dispatch(selectFilm(id)),
   };
 };

@@ -23,7 +23,7 @@ if (app === null) {
 }
 render(
   <Provider store={store}>
-    <App compiler='TypeScript' framework='React' />,
-  </Provider>
-  app,
+    <App compiler='TypeScript' framework='React' />
+  </Provider>,
+  app
 );
